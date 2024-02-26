@@ -884,7 +884,7 @@ SWEP.Attachments = {
         Category = {"cod2019_optic","csgo_optic","eft_optic_large","eft_optic_medium","eft_optic_small"},
         InstalledElements = {"mount_optic"},
         CorrectiveAng = Angle(0, 0, 0),
-		ExtraSightDistance = 20,
+		ExtraSightDistance = 14,
 		Scale = 1,
     },
 	{
