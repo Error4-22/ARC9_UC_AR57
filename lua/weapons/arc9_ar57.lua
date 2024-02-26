@@ -3,7 +3,7 @@ AddCSLuaFile()
 SWEP.Base = "arc9_base"
 
 SWEP.Spawnable = true
-SWEP.Category = "ARC9 - Standard (do not use)"
+SWEP.Category = "ARC9 - UC One-Offs"
 
 SWEP.PrintName = "RAY-EPDW SD"
 SWEP.TrueName = "AR-57 SD"
@@ -27,7 +27,7 @@ SWEP.Credits = {   -- Number in end of title orders line in list (otherwise they
 
 
 SWEP.Description = [[Esoteric personal defense weapon that mounts to an AR-15 lower receiver. It feeds from P90 magazines attached in parallel above the barrel, ejecting casings through what would normally be a magwell. Cursed? Blursed? You decide.]]
-SWEP.StandardPresets = {"[Default]XQAAAQBOAgAAAAAAAAA9iIIiM7tuo1AtT7Qi3VlJ/DwfXWkyw7sbLUBm73ZqkjrHjVfsAtcaFy0TH4TLgYEjekPMC9gfW0d+YDt1NzcBl2fRFRAWfncWYLOI9dNqgGiX2hHPczdvqwhkfOn1HVBIuZ+fZlOnqO5y83mwcZg9iFZ0e9SsK6b6mY9eJl2tzaqu9/iuIvw26/UT8Udb/ja1F3Yzu3+j2N0HKQEOGu5TNDMqgnE1PN+8Q9x3QiQ5g/tt1b+ErHYa9zm566EFhGl8HnHaFRh0OW7CbEiMn16hsXBJXyuFN7b2/1+bXMKxpC8jdX6yNxSSZvHiTzxRTAGRkYwA"
+SWEP.StandardPresets = {
    
 }
 SWEP.ViewModel = "models/weapons/arccw/c_uc_ar57.mdl"
@@ -641,97 +641,7 @@ SWEP.Animations = {
 -------------------------- ATTACHMENTS
 
 SWEP.AttachmentElements = {
-     ["ar57_muzzle"] = {
-        Bodygroups = {
-            {7, 1}
-        }
-    },
-  
-     ["m16_barrel_carbine"] = {
-        Bodygroups = {
-            {6, 2},
-            {7, 1},
-        },
-        AttPosMods = {
-            [5] = {
-                Pos = Vector(0, -.65, 17.57),
-            }
-        }
-    },
-
-    ["stock_231_ex"] = {
-        VMBodygroups = {{ind = 4, bg = 1}},
-    },
-    ["stock_231_in"] = {
-        VMBodygroups = {{ind = 4, bg = 2}},
-    },
-    ["stock_231_tube"] = {
-        VMBodygroups = {{ind = 4, bg = 3}},
-    },
-    ["stock_607_ex"] = {
-        VMBodygroups = {{ind = 4, bg = 4}},
-    },
-    ["stock_607_in"] = {
-        VMBodygroups = {{ind = 4, bg = 5}},
-    },
-    ["stock_608"] = {
-        VMBodygroups = {{ind = 4, bg = 6}},
-    },
-    ["stock_carbine_ex"] = {
-        VMBodygroups = {{ind = 4, bg = 7}},
-    },
-    ["stock_carbine_in"] = {
-        VMBodygroups = {{ind = 4, bg = 8}},
-    },
-    ["stock_wood"] = {
-        VMBodygroups = {{ind = 4, bg = 9}},
-    },
-    ["stock_adar"] = {
-        VMBodygroups = {
-            {ind = 4, bg = 10},
-            {ind = 5, bg = 4}
-        },
-    },
-    ["stock_ru556"] = {
-        VMBodygroups = {{ind = 4, bg = 11}},
-    },
-
-    ["grip_ergo"] = {
-        VMBodygroups = {{ind = 5, bg = 1}},
-    },
-    ["grip_skel"] = {
-        VMBodygroups = {{ind = 5, bg = 2}},
-    },
-    ["grip_wood"] = {
-        VMBodygroups = {{ind = 5, bg = 3}},
-    },
-
-    -- Rear sight fixes
-    ["ud_m16_upper_flat"] = {
-        Override_IronSightStruct = rearSightStruct,
-        Override_IronSightStruct_Priority = 2,
-    },
-    ["ud_m16_rs_3d"] = {
-        Override_IronSightStruct = {
-            Pos = Vector(-2.815, 0, 0.75),
-            Ang = Angle(0.15, 0, 4.9),
-            Magnification = 1.1,
-            SwitchToSound = "",
-        },
-        Override_IronSightStruct_Priority = 3,
-    },
-    ["ar57_fs"] = {
-        Override_IronSightStruct = rearSightStruct,
-        Override_IronSightStruct_Priority = 2,
-    },
 }
-SWEP.Hook_ModifyBodygroups = function(wep, data)
-    local model = data.model
-    if !model then return end
-    if wep:HasElement("m16lp") then
-        model:SetBodygroup(6, wep:HasElement("shortfs") and 3 or 1)
-    end
-end
 
 SWEP.Attachments = {
     {
@@ -800,7 +710,6 @@ SWEP.Attachments = {
         Bone = "weapon",
         Pos = Vector(0, 6, 7),
         Ang = Angle(90, 0, -90),
-		Hidden = true
     },
     {
         PrintName = "Pistol Grips",
@@ -875,7 +784,6 @@ SWEP.Attachments = {
         Category = {"eft_ammo_57"},
         Pos = Vector(0, 6, 10),
         Ang = Angle(90, 0, -90),
-		Hidden = true,
     },
 	{
         PrintName = "ARC9 Optics",
