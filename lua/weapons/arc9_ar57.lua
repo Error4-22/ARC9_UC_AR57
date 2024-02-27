@@ -10,23 +10,24 @@ SWEP.TrueName = "AR-57 SD"
 
 SWEP.Class = "Personal Defense Weapon"
 SWEP.Trivia = {
-    Manufacturer = "Colt's Manufacturing Company",
+    Manufacturer = "AR-57 LLC",
     Calibre = "5.57x28mm FN",
-    Mechanis3 = "Blowback",
+    Mechanism = "Blowback",
     Country = "United States of America",
     Year = "2008",
 }
 
-SWEP.Credits = {   -- Number in end of title orders line in list (otherwise they will be in alphabet in menus). "_" will be replaced with space
+SWEP.Credits = {
 	Author1 = "LP, Error; 422",
 	Contact2 = "https://steamcommunity.com/id/YuzuAhiara/",
 }
 
+SWEP.Description = [[Esoteric personal defense weapon that mounts to an AR-15 lower receiver. It feeds from P90 magazines attached in parallel above the barrel, ejecting casings through what would normally be a magwell. 
 
+Cursed? Blursed? 
 
+You decide.]]
 
-
-SWEP.Description = [[Esoteric personal defense weapon that mounts to an AR-15 lower receiver. It feeds from P90 magazines attached in parallel above the barrel, ejecting casings through what would normally be a magwell. Cursed? Blursed? You decide.]]
 SWEP.StandardPresets = {
    
 }
