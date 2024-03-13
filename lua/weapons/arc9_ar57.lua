@@ -250,12 +250,10 @@ SWEP.CamQCA = 3
 SWEP.CamOffsetAng = Angle(0, 0, 90)
 -------------------------- SOUNDS
 
-local path = ")^weapons/arc9_ud/m16/"
-local common = ")^weapons/arc9_ud/common/"
-SWEP.ShootSoundFirst = path .. "fire_sup.ogg"
-SWEP.ShootSound = {path .. "fire_auto_sup_2.ogg", path .. "fire_auto_sup_3.ogg"}
-SWEP.DistantShootSoundS = common .. "sup_tail.ogg"
-SWEP.DryFireSound = path .. "dryfire.ogg"
+SWEP.ShootSoundFirst = {sound/weapons/arccw_uc_ar57/"fire_sup.ogg"}
+SWEP.ShootSound = {sound/weapons/arccw_uc_ar57/"fire_auto_sup_2.ogg", "fire_auto_sup_3.ogg", "fire_auto_sup_4.ogg"}
+SWEP.DistantShootSoundSilenced = {sound/weapons/arccw_uc_ar57/"sup_tail.ogg"}
+SWEP.DryFireSound = {sound/weapons/arccw_uc_ar57/"dryfire.ogg"}
 SWEP.Silencer = true
 
 SWEP.FiremodeSound = "arc9/firemode.wav"
@@ -280,11 +278,11 @@ end
 SWEP.Animations = {
     ["idle"] = {
         Source = "idle",
-        Time = 1
+        Time = 0.5
     },
     ["idle_empty"] = {
         Source = "idle_empty",
-        Time = 1
+        Time = 0.5
     },
     ["draw"] = {
         Source = "draw",
@@ -296,7 +294,7 @@ SWEP.Animations = {
     },
     ["draw_empty"] = {
         Source = "draw_empty",
-        Time = 20 / 30,
+        Time = 10 / 15,
         EventTable = {
             {s = common .. "raise.ogg", t = 0},
             {s = common .. "shoulder.ogg", t = 0.15},
@@ -656,6 +654,7 @@ SWEP.Attachments = {
         Bone = "weapon",
         Pos = Vector(0, -1.45, -4),
         Ang = Angle(90, 0, -90),
+		Folder = "Front Optics",
 		Hidden = true,
     },
     {
@@ -666,6 +665,7 @@ SWEP.Attachments = {
         Pos = Vector(0, -3.15, 3.5),
         Ang = Angle(90, 0, -90),
 		Scale = 1,
+		Folder = "Front Optics",
 		Hidden = true,
     },
     {
@@ -740,6 +740,7 @@ SWEP.Attachments = {
         ExcludeElements = {"fpw"},
         Pos = Vector(0, -3, 24),
         Ang = Angle(90, 0, -90),
+		Folder = "Front Optics",
 		Hidden = true,
     },
     {
@@ -761,6 +762,7 @@ SWEP.Attachments = {
         ExcludeElements = {"ris_optic"},
         InstalledElements = {"flattop_optic"},
 		Scale = 1,
+		Folder = "Front Optics",
 		Hidden = true,
     },
     {
@@ -768,6 +770,7 @@ SWEP.Attachments = {
         Category = {"rearsight_picatinny", "carryhandle_picatinny"},
         Pos = Vector(1, 0, -1),
 		Scale = 1,
+		Folder = "Front Optics",
         Hidden = true,
     },
 	{
@@ -795,11 +798,12 @@ SWEP.Attachments = {
         InstalledElements = {"mount_optic"},
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1,
+		Folder = "Front Optics",
     },
 	{
         PrintName = "Buffer tube",
         Bone = "weapon",
-        Category = {"csgo_tube","eft_ar15_buffertube", "eft_ar_stock_a2"},
+        Category = {"csgo_tube","eft_ar15_buffertube", "eft_ar_stock_a2",},
         Pos = Vector(0, -0.4, -5.87),
         Ang = Angle(90, 0, -90),
     },
@@ -837,7 +841,6 @@ SWEP.Attachments = {
         Pos = Vector(-0.05, -2.4, -3.5),
         Ang = Angle(0, 0, -90),
         Category = {"eft_ak74_rearsight", "eft_rpk16_rearsight", "eft_akm_rearsight", "eft_vpo209_rearsight"},
-        InstalledElements = {"mount_optic"},
         CorrectiveAng = Angle(0, 0, 0),
 		Scale = 1,
     },
@@ -903,6 +906,18 @@ SWEP.Attachments = {
         Ang = Angle(0, 0, -90),
 		Bone = "Weapon",
         Icon_Offset = Vector(0, 0, 0),
+    },
+	{
+        PrintName = "Front Optics",
+        Bone = "weapon",
+        Pos = Vector(0, -2.25, 11),
+        Ang = Angle(90, 0, -90),
+        Category = {"optic_picatinny"},
+        InstalledElements = {"mount_optic"},
+        CorrectiveAng = Angle(0, 0, 0),
+		ExtraSightDistance = 14,
+		Scale = 1,
+
     },
 	
 }
