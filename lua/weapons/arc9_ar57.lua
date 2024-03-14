@@ -250,10 +250,16 @@ SWEP.CamQCA = 3
 SWEP.CamOffsetAng = Angle(0, 0, 90)
 -------------------------- SOUNDS
 
-SWEP.FirstShootSound = {sound/weapons/arccw_uc_ar57/"fire_sup.ogg"}
-SWEP.ShootSound = {sound/weapons/arccw_uc_ar57/"fire_auto_sup_2.ogg", "fire_auto_sup_3.ogg", "fire_auto_sup_4.ogg"}
-SWEP.DistantShootSound = {sound/weapons/arccw_uc_ar57/"sup_tail.ogg"}
-SWEP.DryFireSound = {sound/weapons/arccw_uc_ar57/"dryfire.ogg"}
+local path = ")^weapons/arc9_ud/m16/"
+local common = ")^weapons/arc9_ud/common/"
+SWEP.FirstShootSound = path .. "first.ogg"
+SWEP.ShootSound = {path .. "auto1.ogg", path .. "auto2.ogg", path .. "auto3.ogg", path .. "auto4.ogg"}
+SWEP.DistantShootSound = path .. "dist.ogg"
+SWEP.ShootSoundSilencedFirst = path .. "fire_sup.ogg"
+SWEP.ShootSoundSilenced = {path .. "fire_auto_sup_2.ogg", path .. "fire_auto_sup_3.ogg"}
+SWEP.DistantShootSoundSilenced = common .. "sup_tail.ogg"
+SWEP.DryFireSound = path .. "dryfire.ogg"
+SWEP.Silencer = true
 
 SWEP.FiremodeSound = "arc9/firemode.wav"
 
